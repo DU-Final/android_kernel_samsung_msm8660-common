@@ -118,6 +118,11 @@ enum kgsl_ctx_reset_stat {
 	KGSL_CTX_STAT_UNKNOWN_CONTEXT_RESET_EXT		= 0x00000003
 };
 
+<<<<<<< HEAD
+=======
+#define KGSL_MAX_PWRLEVELS 7
+
+>>>>>>> 8d36b6d... GPU overclock support
 #define KGSL_CONVERT_TO_MBPS(val) \
 	(val*1000*1000U)
 
@@ -211,6 +216,7 @@ struct kgsl_version {
 
 /* Performance counter groups */
 
+<<<<<<< HEAD
 #define KGSL_PERFCOUNTER_GROUP_CP 0x0
 #define KGSL_PERFCOUNTER_GROUP_RBBM 0x1
 #define KGSL_PERFCOUNTER_GROUP_PC 0x2
@@ -226,6 +232,24 @@ struct kgsl_version {
 #define KGSL_PERFCOUNTER_GROUP_PWR 0xC
 #define KGSL_PERFCOUNTER_GROUP_VBIF 0xD
 #define KGSL_PERFCOUNTER_GROUP_VBIF_PWR 0xE
+=======
+struct kgsl_device_platform_data {
+	struct kgsl_pwrlevel pwrlevel[KGSL_MAX_PWRLEVELS];
+	int init_level;
+	int max_level;
+	int num_levels;
+	int (*set_grp_async)(void);
+	unsigned int idle_timeout;
+	bool strtstp_sleepwake;
+	unsigned int nap_allowed;
+	unsigned int clk_map;
+	unsigned int idle_needed;
+	struct msm_bus_scale_pdata *bus_scale_table;
+	struct kgsl_device_iommu_data *iommu_data;
+	int iommu_count;
+	struct msm_dcvs_core_info *core_info;
+};
+>>>>>>> 8d36b6d... GPU overclock support
 
 #define KGSL_PERFCOUNTER_NOT_USED 0xFFFFFFFF
 
