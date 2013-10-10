@@ -212,8 +212,6 @@ config CPU_FREQ_GOV_CONSERVATIVE
 
 	  If in doubt, say N.
 
-<<<<<<< HEAD
-=======
 config CPU_FREQ_GOV_SMARTASS2
 	tristate "'smartassV2' cpufreq governor"
 	depends on CPU_FREQ
@@ -236,7 +234,6 @@ config SEC_LIMIT_LCD_OFF_CPU_MAX_FREQ
 	default y
 	depends on CPU_FREQ_GOV_ONDEMAND
 
->>>>>>> 089bcb7... Added i/o schedulers and smartassv2 governor
 menu "x86 CPU frequency scaling drivers"
 depends on X86
 source "drivers/cpufreq/Kconfig.x86"
@@ -244,8 +241,7 @@ endmenu
 
 endif
 endmenu
-<<<<<<< HEAD
-=======
+
 config VDD_USERSPACE
 	bool "VDD sysfs interface"
 	default n
@@ -253,4 +249,3 @@ config VDD_USERSPACE
 	help
 	  exposes the VDD table to userspace
 	  allows users to adjust voltages on the fly
->>>>>>> 089bcb7... Added i/o schedulers and smartassv2 governor
